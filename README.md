@@ -41,7 +41,10 @@ Agrega o ajusta claves según los campos generados por `BudgetData.to_flat_dict(
 ## Plantilla PDF
 Se incluye `app/resources/plantilla_base.pdf` como ejemplo. Sustitúyelo por tu plantilla real manteniendo el mismo nombre o selecciona otra desde la aplicación. La primera página se usa como fondo y sobre ella se dibujan los datos.
 
-## Generar ejecutable portable (Windows)
+## Ejecutable incluido y generación portable (Windows)
+- En `dist/generador_presupuestos.exe` se incluye un marcador de posición. Reemplázalo generando tu propio binario en Windows.
+
+Para generar el ejecutable:
 1. Instala PyInstaller (ya en `requirements.txt`).
 2. Ejecuta desde la raíz del proyecto:
    ```bash
@@ -50,7 +53,7 @@ Se incluye `app/resources/plantilla_base.pdf` como ejemplo. Sustitúyelo por tu 
    - `--onefile` crea un único `.exe` portable.
    - `--noconsole` oculta la consola.
    - `--add-data` incluye los recursos (JSON y plantilla). En Windows separa con `;` entre ruta origen y destino.
-3. El ejecutable quedará en `dist/generador_presupuestos.exe`.
+3. El ejecutable real quedará en `dist/generador_presupuestos.exe`, sustituyendo el marcador de posición.
 
 ## Estructura de carpetas
 ```
