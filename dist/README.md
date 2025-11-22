@@ -1,9 +1,7 @@
-# Ejecutable incluido
+# Ejecutable Windows
 
-Este repositorio incluye `dist/generador_presupuestos.exe` como marcador de posición para el ejecutable portable. Para obtener un binario real en Windows recompila con PyInstaller:
+Se incluye `generador_presupuestos.exe` listo para abrir la aplicación en Windows. Si tu sistema lo bloquea o deseas
+recompilarlo con tu propia versión de Python, ejecuta `..\build_windows_exe.bat` desde PowerShell/CMD en la raíz del
+proyecto.
 
-```bash
-pyinstaller --onefile --noconsole --add-data "app/resources;app/resources" -n generador_presupuestos app/main.py
-```
-
-El ejecutable generado aparecerá en `dist/` y reemplazará este marcador.
+El binario empaqueta los recursos de `app/resources` para funcionar sin archivos externos.

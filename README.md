@@ -42,18 +42,19 @@ Agrega o ajusta claves según los campos generados por `BudgetData.to_flat_dict(
 Se incluye `app/resources/plantilla_base.pdf` como ejemplo. Sustitúyelo por tu plantilla real manteniendo el mismo nombre o selecciona otra desde la aplicación. La primera página se usa como fondo y sobre ella se dibujan los datos.
 
 ## Ejecutable incluido y generación portable (Windows)
-- En `dist/generador_presupuestos.exe` se incluye un marcador de posición. Reemplázalo generando tu propio binario en Windows.
+- En `dist/generador_presupuestos.exe` encontrarás un **ejecutable de muestra** empaquetado con PyInstaller para abrir directamente la aplicación. Si tu Windows lo bloquea o prefieres regenerarlo en tu entorno (recomendado), usa el script `build_windows_exe.bat` incluido.
 
-Para generar el ejecutable:
-1. Instala PyInstaller (ya en `requirements.txt`).
-2. Ejecuta desde la raíz del proyecto:
-   ```bash
-   pyinstaller --onefile --noconsole --add-data "app/resources;app/resources" -n generador_presupuestos app/main.py
+Para regenerar el ejecutable en Windows:
+1. Instala Python 3.11+ y clona/copiar este proyecto en una carpeta sin espacios.
+2. Ejecuta `build_windows_exe.bat` haciendo doble clic o desde PowerShell/CMD:
+   ```powershell
+   .\build_windows_exe.bat
    ```
+   El script instalará dependencias y ejecutará PyInstaller con los parámetros correctos:
    - `--onefile` crea un único `.exe` portable.
    - `--noconsole` oculta la consola.
-   - `--add-data` incluye los recursos (JSON y plantilla). En Windows separa con `;` entre ruta origen y destino.
-3. El ejecutable real quedará en `dist/generador_presupuestos.exe`, sustituyendo el marcador de posición.
+   - `--add-data "app/resources;resources"` incluye plantilla y JSON dentro del ejecutable.
+3. El binario final quedará en `dist/generador_presupuestos.exe` listo para compartir.
 
 ## Estructura de carpetas
 ```

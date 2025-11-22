@@ -4,6 +4,7 @@ from tkinter import ttk
 
 from .config_loader import load_positions, DEFAULT_CONFIG_PATH
 from .models import BudgetData, ClientData, PlanData, VehicleData
+from .paths import resource_path
 from .pdf_generator import generate_budget_pdf
 
 
@@ -12,7 +13,7 @@ class BudgetApp:
         self.root = root
         self.root.title("Generador de Presupuestos PDF")
         self.config_path = DEFAULT_CONFIG_PATH
-        self.template_path = Path(__file__).resolve().parent / "resources" / "plantilla_base.pdf"
+        self.template_path = resource_path("resources/plantilla_base.pdf")
         self.positions = load_positions(self.config_path)
 
         self.entries = {}
@@ -61,7 +62,7 @@ class BudgetApp:
         path = filedialog.askopenfilename(
             title="Seleccionar plantilla PDF",
             filetypes=[("PDF", "*.pdf")],
-            initialdir=str(self.template_path.parent),
+            initialdir=str(Path(self.template_path).parent),
         )
         if path:
             self.template_path = Path(path)
@@ -71,7 +72,7 @@ class BudgetApp:
         path = filedialog.askopenfilename(
             title="Seleccionar configuración JSON",
             filetypes=[("JSON", "*.json")],
-            initialdir=str(self.config_path.parent),
+            initialdir=str(Path(self.config_path).parent),
         )
         if path:
             self.config_path = Path(path)
