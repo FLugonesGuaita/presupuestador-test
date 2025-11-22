@@ -1,0 +1,15 @@
+{
+  "cliente_nombre": {"x": 90, "y": 700, "font_size": 12},
+  "cliente_documento": {"x": 90, "y": 680, "font_size": 12},
+  "cliente_telefono": {"x": 90, "y": 660, "font_size": 12},
+  "cliente_correo": {"x": 90, "y": 640, "font_size": 12},
+  "cliente_direccion": {"x": 90, "y": 620, "font_size": 12},
+  "plan_plan_nombre": {"x": 320, "y": 700, "font_size": 12},
+  "plan_plan_cuota": {"x": 320, "y": 680, "font_size": 12},
+  "plan_plan_condiciones": {"x": 320, "y": 660, "font_size": 12},
+  "vehiculo_modelo": {"x": 90, "y": 580, "font_size": 12},
+  "vehiculo_anio": {"x": 90, "y": 560, "font_size": 12},
+  "vehiculo_precio": {"x": 90, "y": 540, "font_size": 12},
+  "vehiculo_color": {"x": 90, "y": 520, "font_size": 12},
+  "vehiculo_version": {"x": 90, "y": 500, "font_size": 12}
+}
